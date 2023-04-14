@@ -25,6 +25,7 @@ const group = {
   1: "thousand",
   2: "million",
   3: "billion",
+  4: "trillion",
 };
 
 const teens = {

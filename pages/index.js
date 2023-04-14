@@ -6,6 +6,23 @@ import numToStr from "@/helpers/numConvert";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
+let position = (index) => {
+  let movement = Math.floor(index / 4) * 20;
+  return {
+    0: `0%, -${120 - movement}%`,
+    1: `${120 - movement}%, 0%`,
+    2: `0%, ${120 - movement}%`,
+    3: `${120 - movement}%, ${100}%`,
+  };
+};
+
+const colors = {
+  0: "blue",
+  1: "green",
+  2: "brown",
+  3: "black",
+};
+
 export default function Home() {
   const [input, setInput] = useState("");
   function handleChange(e) {
@@ -22,29 +39,48 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.className} ${styles.main}`}>
-        <h1 className={`${poppins.className} ${styles.h1}`}>Enter a Number</h1>
-        <form className={styles.form}>
-          <input
-            className={`${poppins.className} ${styles.input}`}
-            type="number"
-            onChange={handleChange}
-            value={input}
-          />
-        </form>
-        <h2 className={`${poppins.className} ${styles.h2}`}>{answer}</h2>
 
-        <svg
-          className={`${poppins.className} ${styles.svg}`}
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 300 24"
-        >
-          <text textLength="290" lengthAdjust="spacing" x="5" y="14">
-            {answer}
-          </text>
-        </svg>
+      <main className={`${poppins.className} ${styles.main}`}>
+        <div className={styles.mainContainer}>
+          <h1 className={`${poppins.className} ${styles.h1}`}>
+            Enter a Number
+          </h1>
+          <form className={styles.form}>
+            <input
+              className={`${poppins.className} ${styles.input}`}
+              type="number"
+              onChange={handleChange}
+              value={input}
+            />
+          </form>
+          {/* <h2 className={`${poppins.className} ${styles.h2}`}>{answer}</h2> */}
+
+          {answer.split(" ").map((str, index) => (
+            <svg
+              key={index}
+              style={{
+                transform: `rotate(${index * 90}deg) translate(${
+                  position(index)[(index * 4) % 4]
+                })`,
+              }}
+              className={`${poppins.className} ${styles.svg}`}
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="30%"
+              viewBox="0 0 300 24"
+            >
+              <text
+                style={{ fill: `${colors[Math.floor(index / 4)]}` }}
+                textLength="290"
+                lengthAdjust="spacing"
+                x="5"
+                y="14"
+              >
+                {str}
+              </text>
+            </svg>
+          ))}
+        </div>
       </main>
     </>
   );
