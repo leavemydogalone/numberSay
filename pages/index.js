@@ -23,9 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${poppins.className} ${styles.main}`}>
-        <h1 className={`${poppins.className} ${styles.h1}`}>
-          Enter a numerical value
-        </h1>
+        <h1 className={`${poppins.className} ${styles.h1}`}>Enter a Number</h1>
         <form className={styles.form}>
           <input
             className={`${poppins.className} ${styles.input}`}
