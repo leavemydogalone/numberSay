@@ -1,5 +1,5 @@
 const singles = {
-  0: "zero",
+  0: "",
   1: "one",
   2: "two",
   3: "three",
@@ -11,7 +11,7 @@ const singles = {
   9: "nine",
 };
 const tens = {
-  1: "teen",
+  1: "ten",
   2: "twenty",
   3: "thirty",
   4: "fourty",
