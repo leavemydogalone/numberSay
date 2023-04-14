@@ -62,11 +62,10 @@ export default function Home() {
                 transform: `rotate(${index * 90}deg) translate(${
                   position(index)[(index * 4) % 4]
                 })`,
+                width: `${23 - Math.floor(index / 4) * 3}%`,
               }}
               className={`${poppins.className} ${styles.svg}`}
               xmlns="http://www.w3.org/2000/svg"
-              width="100%"
-              height="30%"
               viewBox="0 0 300 24"
             >
               <text
