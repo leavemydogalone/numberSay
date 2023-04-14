@@ -57,10 +57,8 @@ export default function numToStr(input) {
       switch (position) {
         case 1:
           if (possibleTeen) {
-            // console.log(teens[parseInt(number[i] + number[i - 1])]);
             current = current + possibleTeen;
             i--;
-            console.log(i);
             break;
           }
           current = current + singles[parseInt(number[i])];
