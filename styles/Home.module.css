@@ -1,5 +1,5 @@
 .main {
-  padding: 2rem;
+  padding: 5rem 2rem;
 }
 .mainContainer {
   display: flex;
@@ -31,7 +31,7 @@
     position: relative !important;
     transform: none !important;
     height: 60px !important;
-    width: 100%;
+    width: 100% !important;
   }
   .svg text {
     fill: black !important;
