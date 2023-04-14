@@ -35,6 +35,7 @@ export default function Home() {
           />
         </form>
         <h2 className={`${poppins.className} ${styles.h2}`}>{answer}</h2>
+
         <svg
           className={`${poppins.className} ${styles.svg}`}
           xmlns="http://www.w3.org/2000/svg"
